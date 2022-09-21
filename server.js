@@ -10,7 +10,6 @@ const bodyParser = require("body-parser")
 const dotenv = require('dotenv')
 dotenv.config()
 const db = require("./db/db");
-const path = require("path");
 db();
 app.use(cors())
 app.use(morgan("dev"))
@@ -46,12 +45,6 @@ readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)))
 app.get("/", (req, res) => {
     res.send("Unleash The Bankai")
 })
-
-app.use(express.static(path.join(__dirname, "/interface/build")));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/interface/build', 'index.html'));
-});
 
 app.listen(process.env.PORT || 8000, (req, res) => {
     console.log("server is connected")

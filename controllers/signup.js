@@ -1,5 +1,5 @@
 const user = require("../models/user.js")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Emailvalidator = require("email-validator");
 const { sendVerificationEmail } = require("../helpers/mailer")
