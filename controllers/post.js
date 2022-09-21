@@ -81,7 +81,7 @@ exports.getPostbyCollege = async(req, res) => {
                 description: post.Description,
                 domain: post.domain,
                 link: post.link,
-                image: post.image.url,
+                image: post.image,
                 createdAt: post.createdAt,
                 updatedAt: post.updatedAt,
                 comments: post.comments

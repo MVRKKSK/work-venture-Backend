@@ -27,9 +27,7 @@ const postSchema = mongoose.Schema({
         required: true
     },
     image: {
-        url: {
-            type: String,
-        }
+        type: String
     },
     comments: [{
         comment: {

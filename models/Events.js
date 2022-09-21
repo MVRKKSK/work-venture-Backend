@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const user = require('./user');
 
 const eventSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
     title: {
         type: String,
         required: true,
@@ -21,10 +17,6 @@ const eventSchema = mongoose.Schema({
     date: {
         type: Date,
         // required: true,
-    },
-    email: {
-        type: String,
-        required: true,
     },
     user: {
         type: ObjectId,
