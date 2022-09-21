@@ -5,11 +5,7 @@ const cloudinary = require("../utils/cloudinary");
 exports.createPost = async(req, res) => {
     try {
         console.log(req.body)
-        const { image } = req.body;
-        const imageUpload = await cloudinary.uploader.upload(image, {
-            folder: "workAf",
-        });
-        const Post = await new post({...req.body, image: imageUpload }).save();
+        const Post = await new post(req.body).save();
         res.json(Post);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -43,7 +39,7 @@ exports.getposts = async(req, res) => {
                 description: post.Description,
                 domain: post.domain,
                 link: post.link,
-                image: post.image.url,
+                image: post.image,
                 createdAt: post.createdAt,
                 updatedAt: post.updatedAt,
                 comments: post.comments
