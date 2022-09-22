@@ -95,7 +95,7 @@ exports.getPostbyCollege = async(req, res) => {
 
 exports.getPostByuser = async(req, res) => {
     try {
-        console.log(req.body.email)
+        // console.log(req.body.email)
         const { email } = req.body
         const posts = await post
             .aggregate([{
