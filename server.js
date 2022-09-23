@@ -11,7 +11,9 @@ const dotenv = require('dotenv')
 dotenv.config()
 const db = require("./db/db");
 db();
-app.use(cors())
+app.use(cors({
+    origin: "*",
+}))
 app.use(morgan("dev"))
 app.use(bodyParser.urlencoded({
     extended: true
